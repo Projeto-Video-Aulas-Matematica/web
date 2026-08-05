@@ -4,8 +4,12 @@ export default function Hero({ title, subtitle, ctaLabel }) {
   return (
     <section className="hero-section">
       <div className="container hero-grid">
-        <div className="video-placeholder large">
-          <span className="play-button">▶</span>
+        <div className="embedded-video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/eJ2ir0y0dX0?si=eW2MJUlF9INzOXRe"
+            title="Vídeo de apresentação"
+            allowFullScreen
+          />
         </div>
 
         <div className="hero-copy">

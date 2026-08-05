@@ -23,7 +23,7 @@ export const course = {
     'Projeto universitário de curso online com foco em matemática básica, progressão por módulos, aulas em vídeo e exercícios para fixação.',
   ctaLabel: 'Comece Agora',
   introText:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis mauris a mauris lacinia laoreet quis in nunc. Sed quis tristique sem. Donec sapien orci, molestie varius elementum ultricies, laoreet at nisi. Vivamus odio nisi, pharetra nec accumsan quis, varius ac sem. Sed vel congue purus. Sed sollicitudin, justo non condimentum vulputate.',
+    'O projeto “Produção de Videoaulas para o Ensino de Matemática” tem como objetivo desenvolver e disponibilizar videoaulas de matemática para apoiar os estudos da comunidade. A iniciativa resulta de uma parceria entre os cursos de Matemática e Ciência da Computação, com apoio da direção-geral do campus de Foz do Iguaçu. Essa colaboração promove a troca de conhecimentos entre os acadêmicos envolvidos na organização, produção e divulgação das videoaulas, contribuindo para a criação de um espaço acessível de aprendizagem em matemática para a comunidade.',
 };
 
 export const modules = [
