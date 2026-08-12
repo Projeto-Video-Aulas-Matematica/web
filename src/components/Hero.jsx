@@ -6,7 +6,7 @@ export default function Hero({ title, subtitle, ctaLabel }) {
       <div className="container hero-grid">
         <div className="embedded-video-wrapper">
           <iframe
-            src="https://www.youtube.com/embed/eJ2ir0y0dX0?si=eW2MJUlF9INzOXRe"
+            src="https://www.youtube.com/embed/pTyE-PvgB-A"
             title="Vídeo de apresentação"
             allowFullScreen
           />

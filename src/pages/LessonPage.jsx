@@ -1,8 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LessonList from '../components/LessonList';
 import Button from '../components/ui/Button';
+import PdfModal from '../components/PdfModal';
 import { modules } from '../data/courseData';
+import roteiro from '../public/pdfs/roteiro-aula-2.pdf'
 
 function findLessonById(lessonId) {
   for (const module of modules) {
@@ -33,7 +35,7 @@ export default function LessonPage() {
 
           <div className="embedded-video-wrapper">
             <iframe
-              src={lesson.videoUrl}
+              src={`${lesson.videoUrl}?vq=hd1080`}
               title={lesson.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -41,21 +43,25 @@ export default function LessonPage() {
           </div>
 
           <div className="lesson-text-block">
-            <h2>Texto da Aula</h2>
+            <h2>Material</h2>
             <p>{lesson.content}</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis mauris a mauris lacinia laoreet quis in nunc.
-            </p>
+            {lesson.pdfUrl && (
+              <a
+                href={lesson.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lesson-pdf-link"
+              >
+                Ver Material da Aula (PDF)
+              </a>
+            )}
           </div>
         </div>
 
         <aside className="lesson-side-card">
-          <div className="video-placeholder small">
-            <span className="play-button">▶</span>
-          </div>
-          <h3>{lesson.title}</h3>
-          <p>{lesson.summary}</p>
-          <Button to={`/modulo/${module.id}`}>Ver Aulas</Button>
+          <h3>{module.title}</h3>
+          <p>{module.description}</p>
+          <Button to={`/modulo/${module.id}`}>Voltar Para o Módulo</Button>
         </aside>
       </div>
     </section>

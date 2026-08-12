@@ -14,10 +14,24 @@ export default function CoursePage() {
         />
 
         <SectionTitle eyebrow="Módulos" title="Do básico ao avançado" />
+
         <div className="module-grid">
           {modules.map((module) => (
             <ModuleCard key={module.id} module={module} />
           ))}
+
+          <div className="module-coming-soon">
+            <div className="coming-soon-icon">+</div>
+
+            <p className="mini-label">Em breve</p>
+
+            <h3>Novos módulos estão chegando</h3>
+
+            <p>
+              Estamos preparando novos conteúdos para continuar sua jornada
+              de aprendizado em matemática.
+            </p>
+          </div>
         </div>
       </div>
     </section>

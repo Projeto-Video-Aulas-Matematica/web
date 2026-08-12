@@ -20,14 +20,18 @@ export default function ModulePage() {
         <div className="module-main-content">
           <SectionTitle eyebrow="Módulo" title={module.title} description={module.shortDescription} centered />
 
-          <div className="video-placeholder medium">
-            <span className="play-button">▶</span>
+          <div className="embedded-video-wrapper">
+            <iframe
+              src={module.videoUrl}
+              title={module.videoTitle}
+              allowFullScreen
+            />
           </div>
 
           <div className="module-content-block">
             <h3>Detalhes do módulo</h3>
             <p>
-              Este módulo reúne aulas introdutórias e material de apoio para facilitar a continuidade do estudo.
+              {module.description}
             </p>
           </div>
         </div>
@@ -43,11 +47,16 @@ export default function ModulePage() {
             <ExerciseList exercises={module.exercises} />
           </div>
 
-          <div className="sidebar-card center-block">
-            <p className="mini-label">Próximo módulo</p>
-            <strong>{module.nextModuleName}</strong>
-            <Button to={`/aula/${module.lessons[0].id}`}>Continuar</Button>
-          </div>
+          {module.nextModuleName && (
+            <div className="sidebar-card center-block next-module-card">
+              <p className="mini-label">Próximo módulo</p>
+              <strong>{module.nextModuleName}</strong>
+
+              <Button to={`/aula/${module.lessons[0].id}`}>
+                Continuar
+              </Button>
+            </div>
+          )}
 
           <Link className="text-link" to="/curso">
             Voltar para o curso

@@ -61,7 +61,7 @@ img {
 }
 
 .soft-section {
-  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(241,241,241,0.95));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(241, 241, 241, 0.95));
 }
 
 .site-header {
@@ -173,6 +173,26 @@ img {
   letter-spacing: 0.12em;
   color: var(--muted);
 }
+
+.next-module-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.next-module-card .mini-label {
+  margin: 0;
+}
+
+.next-module-card strong {
+  text-align: center;
+}
+
+.next-module-card .button {
+  margin-top: 0.3rem;
+}
+
 
 .video-placeholder {
   position: relative;
@@ -311,6 +331,18 @@ img {
 
 .module-thumb {
   min-height: 180px;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+
+.module-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .module-card-body {
@@ -463,7 +495,100 @@ img {
   font-size: 0.92rem;
 }
 
+.lesson-text-block {
+  display: grid;
+  text-align: center;
+}
+
+.lesson-pdf-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.lesson-pdf-link {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.9rem 1.8rem;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #1e293b;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.lesson-pdf-link:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.module-coming-soon {
+  min-height: 280px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+
+  background: var(--surface);
+}
+
+.coming-soon-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+
+  border-radius: 50%;
+
+  font-size: 1.8rem;
+  font-weight: 300;
+
+  background: var(--background);
+  color: var(--muted);
+}
+
+.module-coming-soon .mini-label {
+  margin: 0 0 0.5rem;
+}
+
+.module-coming-soon h3 {
+  margin: 0 0 0.75rem;
+}
+
+.module-coming-soon p:last-child {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+}
+
 @media (max-width: 1080px) {
+
   .module-grid,
   .feature-grid,
   .lesson-page-grid,
@@ -496,11 +621,14 @@ img {
 }
 
 @media (max-width: 760px) {
-  .nav-content,
-  .main-nav,
+
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav-content {
+    position: relative;
   }
 
   .hero-copy h1 {
